@@ -155,8 +155,26 @@ header .container nav .more i {
     padding-top: 120px;
     background-image: url(../images/banner.jpg);
     background-size: cover;
+    position: relative;
 }
 
+.landing::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #000000bd;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+@media(max-width:577px) {
+    .landing::before {
+        display: block;
+    }
+}
 
 .landing .container .holder {
     width: 90%;
@@ -168,6 +186,8 @@ header .container nav .more i {
 @media(max-width:577px) {
     .landing .container .holder {
         width: calc(100% - 70px);
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -181,6 +201,7 @@ header .container nav .more i {
     height: 25px;
     border-radius: 50%;
     opacity: 1;
+    border: 2px solid white;
 }
 
 .landing .holder .carousel-indicators button.active {
